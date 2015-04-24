@@ -36,34 +36,54 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1Ib-AL-sab"/>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CdA-zb-9pG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uG4-U0-Ktr" secondAttribute="bottom" id="EkH-V9-yYb"/>
+                            <constraint firstItem="CdA-zb-9pG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FNg-AC-0qa"/>
+                            <constraint firstItem="CdA-zb-9pG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="Wxx-V4-kGO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CdA-zb-9pG" secondAttribute="trailing" constant="-15" id="ZaK-Ku-Zqv"/>
                             <constraint firstItem="uG4-U0-Ktr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="b88-rK-lxf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uG4-U0-Ktr" secondAttribute="trailing" constant="-15" id="nwD-J4-bEW"/>
+                            <constraint firstItem="uG4-U0-Ktr" firstAttribute="top" secondItem="CdA-zb-9pG" secondAttribute="bottom" id="xML-df-OsV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="uG4-U0-Ktr"/>
+                                <exclude reference="CdA-zb-9pG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="EkH-V9-yYb"/>
+                                <exclude reference="FNg-AC-0qa"/>
+                                <exclude reference="Wxx-V4-kGO"/>
+                                <exclude reference="ZaK-Ku-Zqv"/>
                                 <exclude reference="b88-rK-lxf"/>
                                 <exclude reference="nwD-J4-bEW"/>
+                                <exclude reference="xML-df-OsV"/>
+                                <exclude reference="EkH-V9-yYb"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="uG4-U0-Ktr"/>
+                                <include reference="CdA-zb-9pG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="EkH-V9-yYb"/>
+                                <include reference="FNg-AC-0qa"/>
+                                <include reference="Wxx-V4-kGO"/>
+                                <include reference="ZaK-Ku-Zqv"/>
                                 <include reference="b88-rK-lxf"/>
                                 <include reference="nwD-J4-bEW"/>
+                                <include reference="xML-df-OsV"/>
+                                <include reference="EkH-V9-yYb"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="ImageView" destination="CdA-zb-9pG" id="INT-0u-H33"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

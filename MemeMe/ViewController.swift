@@ -9,20 +9,18 @@
 import UIKit
 import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+  @IBOutlet weak var ImageView: UIImageView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
   
   @IBAction func OpenAlbum(sender: AnyObject) {
     var ImagePicker = UIImagePickerController()
+    ImagePicker.delegate = self
     ImagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
     self.presentViewController(ImagePicker, animated: true, completion: nil)
   }
@@ -36,6 +34,12 @@ class ViewController: UIViewController {
       ImagePicker.allowsEditing = false
       self.presentViewController(ImagePicker, animated: true, completion: nil)
     }
+  }
+  
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    self.dismissViewControllerAnimated(true, completion: nil)
+    ImageView.image = image
+    
   }
 
 }

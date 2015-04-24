@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,23 @@ class ViewController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  @IBAction func OpenAlbum(sender: AnyObject) {
+    var ImagePicker = UIImagePickerController()
+    ImagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+    self.presentViewController(ImagePicker, animated: true, completion: nil)
+  }
+  
+  
+  @IBAction func OpenCamera(sender: AnyObject) {
+    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+      var ImagePicker = UIImagePickerController()
+      ImagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+      ImagePicker.mediaTypes = [kUTTypeImage]
+      ImagePicker.allowsEditing = false
+      self.presentViewController(ImagePicker, animated: true, completion: nil)
+    }
   }
 
 }

@@ -36,29 +36,62 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1Ib-AL-sab"/>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKg-n9-AvR">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="10" y="90" width="374" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3up-18-Iqy">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="149" y="465" width="97" height="30"/>
+                                </variation>
+                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CdA-zb-9pG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="10" y="20" width="381" height="536"/>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lKg-n9-AvR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Aob-fx-yCR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uG4-U0-Ktr" secondAttribute="bottom" id="EkH-V9-yYb"/>
                             <constraint firstItem="CdA-zb-9pG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FNg-AC-0qa"/>
+                            <constraint firstItem="lKg-n9-AvR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="JAp-F0-cD7"/>
+                            <constraint firstItem="lKg-n9-AvR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="VgQ-JR-Q6P"/>
                             <constraint firstItem="CdA-zb-9pG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="Wxx-V4-kGO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CdA-zb-9pG" secondAttribute="trailing" constant="-15" id="ZaK-Ku-Zqv"/>
                             <constraint firstItem="uG4-U0-Ktr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="b88-rK-lxf"/>
+                            <constraint firstItem="3up-18-Iqy" firstAttribute="top" secondItem="CdA-zb-9pG" secondAttribute="bottom" constant="-84" id="eE6-mx-IIS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uG4-U0-Ktr" secondAttribute="trailing" constant="-15" id="nwD-J4-bEW"/>
                             <constraint firstItem="uG4-U0-Ktr" firstAttribute="top" secondItem="CdA-zb-9pG" secondAttribute="bottom" id="xML-df-OsV"/>
+                            <constraint firstItem="3up-18-Iqy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yCY-72-r7k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3up-18-Iqy" secondAttribute="trailing" id="z42-Z2-QvW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="uG4-U0-Ktr"/>
+                                <exclude reference="lKg-n9-AvR"/>
+                                <exclude reference="3up-18-Iqy"/>
                                 <exclude reference="CdA-zb-9pG"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="FNg-AC-0qa"/>
                                 <exclude reference="Wxx-V4-kGO"/>
                                 <exclude reference="ZaK-Ku-Zqv"/>
+                                <exclude reference="Aob-fx-yCR"/>
+                                <exclude reference="JAp-F0-cD7"/>
+                                <exclude reference="VgQ-JR-Q6P"/>
+                                <exclude reference="eE6-mx-IIS"/>
+                                <exclude reference="yCY-72-r7k"/>
+                                <exclude reference="z42-Z2-QvW"/>
                                 <exclude reference="b88-rK-lxf"/>
                                 <exclude reference="nwD-J4-bEW"/>
                                 <exclude reference="xML-df-OsV"/>
@@ -68,12 +101,20 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="uG4-U0-Ktr"/>
+                                <include reference="lKg-n9-AvR"/>
+                                <include reference="3up-18-Iqy"/>
                                 <include reference="CdA-zb-9pG"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="FNg-AC-0qa"/>
                                 <include reference="Wxx-V4-kGO"/>
                                 <include reference="ZaK-Ku-Zqv"/>
+                                <include reference="Aob-fx-yCR"/>
+                                <include reference="JAp-F0-cD7"/>
+                                <include reference="VgQ-JR-Q6P"/>
+                                <include reference="eE6-mx-IIS"/>
+                                <include reference="yCY-72-r7k"/>
+                                <include reference="z42-Z2-QvW"/>
                                 <include reference="b88-rK-lxf"/>
                                 <include reference="nwD-J4-bEW"/>
                                 <include reference="xML-df-OsV"/>
@@ -82,7 +123,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="BottomTextField" destination="3up-18-Iqy" id="Ak9-Nh-aZq"/>
                         <outlet property="ImageView" destination="CdA-zb-9pG" id="INT-0u-H33"/>
+                        <outlet property="TopTextField" destination="lKg-n9-AvR" id="8sA-SY-Idm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

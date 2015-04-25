@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Vt-4Z-b2k">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="d6e-2w-j09">
+            <objects>
+                <navigationController id="1Vt-4Z-b2k" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hLV-Ub-CXO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dHK-Mz-7hp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y4Y-RF-CM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-211.5" y="-354"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -21,16 +37,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CdA-zb-9pG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Top Text Goes Here" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKg-n9-AvR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Top Text Goes Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKg-n9-AvR">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <rect key="frame" x="16" y="139" width="368" height="15"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3up-18-Iqy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3up-18-Iqy">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Text Goes Here">
@@ -41,8 +58,9 @@
                                     </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                    <rect key="frame" x="16" y="466" width="368" height="20"/>
                                 </variation>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uG4-U0-Ktr">
@@ -65,12 +83,14 @@
                             <constraint firstAttribute="trailing" secondItem="uG4-U0-Ktr" secondAttribute="trailing" id="6Y3-vR-vbi"/>
                             <constraint firstItem="CdA-zb-9pG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7pb-nP-I8Q"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uG4-U0-Ktr" secondAttribute="bottom" id="9ww-H0-AGO"/>
+                            <constraint firstItem="CdA-zb-9pG" firstAttribute="top" secondItem="lKg-n9-AvR" secondAttribute="bottom" constant="-90" id="AAY-ms-5f4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CdA-zb-9pG" secondAttribute="trailing" id="Dmz-XR-qY7"/>
+                            <constraint firstItem="CdA-zb-9pG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="MjK-qR-2pK"/>
+                            <constraint firstItem="3up-18-Iqy" firstAttribute="top" secondItem="CdA-zb-9pG" secondAttribute="bottom" constant="-90" id="UaH-HC-OBo"/>
                             <constraint firstAttribute="centerX" secondItem="3up-18-Iqy" secondAttribute="centerX" id="Vhf-gO-Oyh"/>
-                            <constraint firstItem="uG4-U0-Ktr" firstAttribute="top" secondItem="3up-18-Iqy" secondAttribute="bottom" constant="100" id="cdq-dR-dEP"/>
-                            <constraint firstItem="uG4-U0-Ktr" firstAttribute="top" secondItem="CdA-zb-9pG" secondAttribute="bottom" id="m6c-Gy-cNc"/>
-                            <constraint firstAttribute="centerY" secondItem="CdA-zb-9pG" secondAttribute="centerY" constant="22" id="ojy-dj-8WK"/>
-                            <constraint firstItem="3up-18-Iqy" firstAttribute="top" secondItem="lKg-n9-AvR" secondAttribute="bottom" constant="400" id="vyA-vu-4nU"/>
+                            <constraint firstItem="uG4-U0-Ktr" firstAttribute="top" secondItem="CdA-zb-9pG" secondAttribute="bottom" constant="15" id="m6c-Gy-cNc">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="lKg-n9-AvR" secondAttribute="centerX" id="x1t-zj-Y3P"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uG4-U0-Ktr" secondAttribute="bottom" id="yNg-a4-gH0"/>
                             <constraint firstItem="uG4-U0-Ktr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yzo-RR-jtL"/>
@@ -83,18 +103,18 @@
                                 <exclude reference="uG4-U0-Ktr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Vhf-gO-Oyh"/>
-                                <exclude reference="vyA-vu-4nU"/>
+                                <exclude reference="7pb-nP-I8Q"/>
+                                <exclude reference="AAY-ms-5f4"/>
+                                <exclude reference="Dmz-XR-qY7"/>
+                                <exclude reference="MjK-qR-2pK"/>
                                 <exclude reference="x1t-zj-Y3P"/>
-                                <exclude reference="9ww-H0-AGO"/>
-                                <exclude reference="yNg-a4-gH0"/>
+                                <exclude reference="UaH-HC-OBo"/>
+                                <exclude reference="Vhf-gO-Oyh"/>
                                 <exclude reference="6Y3-vR-vbi"/>
-                                <exclude reference="cdq-dR-dEP"/>
                                 <exclude reference="m6c-Gy-cNc"/>
                                 <exclude reference="yzo-RR-jtL"/>
-                                <exclude reference="7pb-nP-I8Q"/>
-                                <exclude reference="Dmz-XR-qY7"/>
-                                <exclude reference="ojy-dj-8WK"/>
+                                <exclude reference="9ww-H0-AGO"/>
+                                <exclude reference="yNg-a4-gH0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -105,21 +125,22 @@
                                 <include reference="uG4-U0-Ktr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Vhf-gO-Oyh"/>
-                                <include reference="vyA-vu-4nU"/>
+                                <include reference="7pb-nP-I8Q"/>
+                                <include reference="AAY-ms-5f4"/>
+                                <include reference="Dmz-XR-qY7"/>
+                                <include reference="MjK-qR-2pK"/>
                                 <include reference="x1t-zj-Y3P"/>
-                                <include reference="9ww-H0-AGO"/>
-                                <include reference="yNg-a4-gH0"/>
+                                <include reference="UaH-HC-OBo"/>
+                                <include reference="Vhf-gO-Oyh"/>
                                 <include reference="6Y3-vR-vbi"/>
-                                <include reference="cdq-dR-dEP"/>
                                 <include reference="m6c-Gy-cNc"/>
                                 <include reference="yzo-RR-jtL"/>
-                                <include reference="7pb-nP-I8Q"/>
-                                <include reference="Dmz-XR-qY7"/>
-                                <include reference="ojy-dj-8WK"/>
+                                <include reference="9ww-H0-AGO"/>
+                                <include reference="yNg-a4-gH0"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="6Ka-jp-HOH"/>
                     <connections>
                         <outlet property="BottomTextField" destination="3up-18-Iqy" id="Ak9-Nh-aZq"/>
                         <outlet property="ImageView" destination="CdA-zb-9pG" id="INT-0u-H33"/>
@@ -128,6 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="720" y="-335"/>
         </scene>
     </scenes>
 </document>

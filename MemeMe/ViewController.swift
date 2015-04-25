@@ -107,6 +107,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     self.dismissViewControllerAnimated(true, completion: nil)
     ImageView.image = image
     ImageSelected = true
+    TopTextField.text = "Enter Meme Text"
+    BottomTextField.text = "Enter Meme Text"
     TopTextField.hidden = false
     BottomTextField.hidden = false
   }

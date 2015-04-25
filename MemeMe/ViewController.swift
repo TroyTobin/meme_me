@@ -14,10 +14,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   @IBOutlet weak var ImageView: UIImageView!
   @IBOutlet weak var TopTextField: UITextField!
   @IBOutlet weak var BottomTextField: UITextField!
+  var ImageSelected: Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -26,23 +26,56 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     self.subscribeToKeyboardNotifications()
     BottomTextField.delegate = self
     TopTextField.delegate = self
+    // Do any additional setup after loading the view, typically from a nib.
+    let memeTextAttributes = [
+      NSStrokeColorAttributeName : UIColor.blackColor(),
+      NSForegroundColorAttributeName : UIColor.whiteColor(),
+      NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+      NSStrokeWidthAttributeName : -3.0
+    ]
+    
+    BottomTextField.defaultTextAttributes = memeTextAttributes
+    TopTextField.defaultTextAttributes = memeTextAttributes
+    BottomTextField.textAlignment = .Center
+    TopTextField.textAlignment = .Center
+    if (!ImageSelected)
+    {
+      BottomTextField.hidden = true
+      TopTextField.hidden = true
+    }
+ }
+  
+  // Unsubscribe
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.unsubscribeFromKeyboardNotifications()
   }
   
   func subscribeToKeyboardNotifications() {
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
   }
   
+  
+  func unsubscribeFromKeyboardNotifications() {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+  
   func keyboardWillShow(notification: NSNotification) {
     if BottomTextField.isFirstResponder() {
-      self.view.frame.origin.y -= getKeyboardHeight(notification)
+      self.view.frame.origin.y = -getKeyboardHeight(notification)
+      println(self.view.frame.origin.y)
     }
+  }
+  
+  func textFieldDidBeginEditing(textField: UITextField) {
+    textField.text = ""
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     if BottomTextField.isFirstResponder() {
       self.view.frame.origin.y = 0
     }
-    self.view.endEditing(true)
+    textField.resignFirstResponder()
     return true
   }
   
@@ -73,7 +106,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
     self.dismissViewControllerAnimated(true, completion: nil)
     ImageView.image = image
-    
+    ImageSelected = true
+    TopTextField.hidden = false
+    BottomTextField.hidden = false
   }
 
 }

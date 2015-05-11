@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Vt-4Z-b2k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Vt-4Z-b2k">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -42,9 +42,8 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="widthClass=compact" misplaced="YES">
+                                <variation key="widthClass=compact">
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <rect key="frame" x="16" y="139" width="368" height="15"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="redraw" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3up-18-Iqy">
@@ -58,9 +57,8 @@
                                     </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="widthClass=compact" misplaced="YES">
+                                <variation key="widthClass=compact">
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
-                                    <rect key="frame" x="16" y="466" width="368" height="20"/>
                                 </variation>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uG4-U0-Ktr">
@@ -77,6 +75,27 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1Ib-AL-sab"/>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUM-kM-fXv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="31" y="295" width="34" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbw-Hq-TVy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="31" y="295" width="34" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="SaveMeme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yD1-f3-UuA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,20 +120,22 @@
                                 <exclude reference="lKg-n9-AvR"/>
                                 <exclude reference="3up-18-Iqy"/>
                                 <exclude reference="uG4-U0-Ktr"/>
+                                <exclude reference="VUM-kM-fXv"/>
+                                <exclude reference="vbw-Hq-TVy"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="UaH-HC-OBo"/>
+                                <exclude reference="Vhf-gO-Oyh"/>
+                                <exclude reference="x1t-zj-Y3P"/>
+                                <exclude reference="9ww-H0-AGO"/>
+                                <exclude reference="yNg-a4-gH0"/>
+                                <exclude reference="6Y3-vR-vbi"/>
+                                <exclude reference="m6c-Gy-cNc"/>
+                                <exclude reference="yzo-RR-jtL"/>
                                 <exclude reference="7pb-nP-I8Q"/>
                                 <exclude reference="AAY-ms-5f4"/>
                                 <exclude reference="Dmz-XR-qY7"/>
                                 <exclude reference="MjK-qR-2pK"/>
-                                <exclude reference="x1t-zj-Y3P"/>
-                                <exclude reference="UaH-HC-OBo"/>
-                                <exclude reference="Vhf-gO-Oyh"/>
-                                <exclude reference="6Y3-vR-vbi"/>
-                                <exclude reference="m6c-Gy-cNc"/>
-                                <exclude reference="yzo-RR-jtL"/>
-                                <exclude reference="9ww-H0-AGO"/>
-                                <exclude reference="yNg-a4-gH0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -123,20 +144,22 @@
                                 <include reference="lKg-n9-AvR"/>
                                 <include reference="3up-18-Iqy"/>
                                 <include reference="uG4-U0-Ktr"/>
+                                <include reference="VUM-kM-fXv"/>
+                                <include reference="vbw-Hq-TVy"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="UaH-HC-OBo"/>
+                                <include reference="Vhf-gO-Oyh"/>
+                                <include reference="x1t-zj-Y3P"/>
+                                <include reference="9ww-H0-AGO"/>
+                                <include reference="yNg-a4-gH0"/>
+                                <include reference="6Y3-vR-vbi"/>
+                                <include reference="m6c-Gy-cNc"/>
+                                <include reference="yzo-RR-jtL"/>
                                 <include reference="7pb-nP-I8Q"/>
                                 <include reference="AAY-ms-5f4"/>
                                 <include reference="Dmz-XR-qY7"/>
                                 <include reference="MjK-qR-2pK"/>
-                                <include reference="x1t-zj-Y3P"/>
-                                <include reference="UaH-HC-OBo"/>
-                                <include reference="Vhf-gO-Oyh"/>
-                                <include reference="6Y3-vR-vbi"/>
-                                <include reference="m6c-Gy-cNc"/>
-                                <include reference="yzo-RR-jtL"/>
-                                <include reference="9ww-H0-AGO"/>
-                                <include reference="yNg-a4-gH0"/>
                             </mask>
                         </variation>
                     </view>

@@ -112,6 +112,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     TopTextField.hidden = false
     BottomTextField.hidden = false
   }
+  
+  func save()
+  {
+    var NewMeme = Meme(topText:TopTextField.text, bottomText:BottomTextField.text, image:ImageView.image!, memedImage:GenerateMemeImage())
+    
+    ImageView.image = NewMeme.MemedImage
+  
+  }
+  
+  func GenerateMemeImage() -> UIImage!
+  {
+    // Render view to an image
+    UIGraphicsBeginImageContext(self.view.frame.size)
+    self.view.drawViewHierarchyInRect(self.view.frame,
+      afterScreenUpdates: true)
+    let memedImage : UIImage =
+    UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return memedImage
+    
+  }
+  
+  @IBAction func SaveMeme(sender: AnyObject) {
+    save()
+  }
 
 }
 

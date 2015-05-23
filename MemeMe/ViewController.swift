@@ -57,7 +57,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   {
     if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
     {
-      print ("landscape2");
       let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -73,7 +72,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
     {
-      print ("portrait2");
       let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -158,6 +156,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
       // Allows meme to be saved if activity is completed.
       if completed {
         self.dismissViewControllerAnimated(true, completion: nil)
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(NewMeme)
+        print("in share meme -> number of memes ");
+        println(appDelegate.memes.count)
       }
     }
     self.presentViewController(activityController, animated: true, completion: nil)

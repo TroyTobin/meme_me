@@ -18,6 +18,7 @@ class MemeCollectionViewController: UIViewController,
   var Memes: [Meme]!
   @IBOutlet var CollectionView: UICollectionView!
   
+  
   override func viewWillAppear(animated: Bool)
   {
     super.viewWillAppear(animated)
@@ -29,7 +30,13 @@ class MemeCollectionViewController: UIViewController,
     /// Get the shared memes array
     let AppDelegateObject = UIApplication.sharedApplication().delegate as! AppDelegate
     Memes = AppDelegateObject.Memes
-    
+    if (Memes.count == 0 && AppDelegateObject.Entry)
+    {
+      println("here")
+      let CreateMemeView = self.storyboard!.instantiateViewControllerWithIdentifier("CreateMemeNavController") as! UINavigationController
+      self.navigationController?.presentViewController(CreateMemeView, animated: true, completion: nil)
+    }
+    AppDelegateObject.Entry = false
     /// Reload the memes in the collection view
     CollectionView.reloadData()
   }

@@ -208,7 +208,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xTk-vq-faS">
             <objects>
-                <navigationController id="n5r-bX-2of" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CreateMemeNavController" id="n5r-bX-2of" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qZ0-Ya-PJt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -238,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="-228" y="-1046"/>
         </scene>
-        <!--Create Meme View Controller-->
+        <!--CreateMemeView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CreateMemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="CreateMemeViewController" storyboardIdentifier="CreateMemeView" title="CreateMemeView" id="BYZ-38-t0r" customClass="CreateMemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

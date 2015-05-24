@@ -23,7 +23,10 @@ class Meme
   /// :param: image The image for the Meme
   /// :param: memedImage The combined Meme image, including the top text, 
   ///                    bottom text and the image.
-  init(topText:NSString, bottomText:NSString, image:UIImage, memedImage:UIImage)
+  init(topText:NSString,
+       bottomText:NSString,
+       image:UIImage,
+       memedImage:UIImage)
   {
     TopText = topText
     BottomText = bottomText

@@ -209,7 +209,8 @@ class CreateMemeViewController: UIViewController,
   }
   
   /// Cancel the meme creation by dismissing the view controller
-  @IBAction func CancelMeme(sender: AnyObject) {
+  @IBAction func CancelMeme(sender: AnyObject)
+  {
     self.dismissViewControllerAnimated(true, completion: nil)
   }
   
@@ -232,7 +233,10 @@ class CreateMemeViewController: UIViewController,
     /// :param: Completed Indicates if the action was completed
     /// :param: ReturnedIems Items changed during the activity action
     /// :param: Error Object returned if Activity Action failed
-    func ActivityCompleted(Activity: String!, Completed: Bool, ReturnedItems: [AnyObject]!, Error: NSError!) -> Void
+    func ActivityCompleted(Activity: String!,
+                           Completed: Bool,
+                           ReturnedItems: [AnyObject]!,
+                           Error: NSError!) -> Void
     {
       if (Completed)
       {
@@ -252,7 +256,10 @@ class CreateMemeViewController: UIViewController,
   /// :param: picker The image picker controller
   /// :param: didFinishPickingImage The image selected in teh Image Picker
   /// :param: editingInfo Editing information
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+  func imagePickerController(picker: UIImagePickerController,
+                             didFinishPickingImage image: UIImage!,
+                             editingInfo: [NSObject : AnyObject]!)
+  {
     self.dismissViewControllerAnimated(true, completion: nil)
     ImageView.image = image
     ImageSelected = true

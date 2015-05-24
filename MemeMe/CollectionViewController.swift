@@ -35,13 +35,15 @@ class MemeCollectionViewController: UIViewController,
   }
   
   /// Return the number of saved Meme images to show
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+  func collectionView(collectionView: UICollectionView,
+                      numberOfItemsInSection section: Int) -> Int
   {
     return self.Memes.count
   }
   
   /// Return the meme for the desired index
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+  func collectionView(collectionView: UICollectionView,
+                      cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
   {
     
     let MemeCell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionViewCell", forIndexPath: indexPath) as! MemeCollectionViewCell
@@ -54,7 +56,8 @@ class MemeCollectionViewController: UIViewController,
   }
   
   /// View the selected meme in the MemeViewController
-  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
+  func collectionView(collectionView: UICollectionView,
+                      didSelectItemAtIndexPath indexPath:NSIndexPath)
   {
     let MemeView = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
     MemeView.SelectedMeme = self.Memes[indexPath.row]

@@ -63,6 +63,5 @@ class MemeCollectionViewController: UIViewController,
     MemeView.SelectedMeme = self.Memes[indexPath.row]
     self.navigationController!.pushViewController(MemeView, animated: true)
   }
-  
 }
 

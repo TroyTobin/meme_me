@@ -14,6 +14,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   @IBOutlet weak var ImageView: UIImageView!
   @IBOutlet weak var TopTextField: UITextField!
   @IBOutlet weak var BottomTextField: UITextField!
+  @IBOutlet weak var ShareIcon: UIBarButtonItem!
+  @IBOutlet weak var CancelIcon: UIBarButtonItem!
+  @IBOutlet weak var CameraIcon: UIBarButtonItem!
+  
   var ImageSelected: Bool = false
   
   @IBOutlet weak var Toolbar: UIToolbar!
@@ -30,7 +34,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     BottomTextField.delegate = self
     TopTextField.delegate = self
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+      CameraIcon.enabled = true
+    }
+    else
+    {
+      CameraIcon.enabled = false
+    }
+    ShareIcon.enabled = false
+    
  }
   
   override func viewDidAppear(animated: Bool)
@@ -42,12 +55,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     {
       BottomTextField.hidden = true
       TopTextField.hidden = true
+      ShareIcon.enabled = false
     }
     else
     {
       
       BottomTextField.hidden = false
       TopTextField.hidden = false
+      ShareIcon.enabled = true
     }
   
   }

@@ -7,42 +7,57 @@
 
 import UIKit
 
-class MemeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+/// This class controls the view for showing saved memes in a collection view.
+/// NOTE: majority of this code and structure has resulted from
+///       completing the "UIKit Fundamentals" Udacity course
+class MemeCollectionViewController: UIViewController,
+                                    UICollectionViewDataSource,
+                                    UICollectionViewDelegate
+{
   
-  var memes: [Meme]!
+  var Memes: [Meme]!
   @IBOutlet var CollectionView: UICollectionView!
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(animated: Bool)
+  {
     super.viewWillAppear(animated)
+    
+    /// Set this class to be the delegate
     self.CollectionView?.delegate = self
     self.CollectionView?.dataSource = self
     
-    let object = UIApplication.sharedApplication().delegate
-    let appDelegate = object as! AppDelegate
-    memes = appDelegate.Memes
+    /// Get the shared memes array
+    let AppDelegateObject = UIApplication.sharedApplication().delegate as! AppDelegate
+    Memes = AppDelegateObject.Memes
     
+    /// Reload the memes in the collection view
     CollectionView.reloadData()
   }
   
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.memes.count
+  /// Return the number of saved Meme images to show
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+  {
+    return self.Memes.count
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+  /// Return the meme for the desired index
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+  {
     
     let MemeCell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionViewCell", forIndexPath: indexPath) as! MemeCollectionViewCell
-    let meme = self.memes[indexPath.row]
+    let Meme = self.Memes[indexPath.row]
     
-    // Set the name and image
-    MemeCell.ImageView?.image = meme.MemedImage
+    /// Set the meme label and image
+    MemeCell.ImageView?.image = Meme.MemedImage
     
     return MemeCell
   }
   
+  /// View the selected meme in the MemeViewController
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
   {
     let MemeView = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
-    MemeView.meme = self.memes[indexPath.row]
+    MemeView.SelectedMeme = self.Memes[indexPath.row]
     self.navigationController!.pushViewController(MemeView, animated: true)
   }
   

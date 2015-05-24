@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This class defines the CollectionView Cell to have a single image
 class MemeCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var ImageView: UIImageView!

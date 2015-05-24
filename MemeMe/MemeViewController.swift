@@ -8,23 +8,27 @@
 
 import UIKit
 
-class MemeViewController : UIViewController {
+/// This class controls the view for showing saved memes in a table view.
+class MemeViewController : UIViewController
+{
   
   @IBOutlet weak var MemeImageView: UIImageView!
+  var SelectedMeme: Meme!
   
-  var meme: Meme!
-  
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(animated: Bool)
+  {
     super.viewWillAppear(animated)
     
+    /// Hide the tab bar when viewing the meme
     self.tabBarController?.tabBar.hidden = true
-    
-    self.MemeImageView!.image = meme.MemedImage
-    //set contentMode to scale aspect to fit
+    self.MemeImageView!.image = SelectedMeme.MemedImage
   }
   
-  override func viewWillDisappear(animated: Bool) {
+  override func viewWillDisappear(animated: Bool)
+  {
     super.viewWillDisappear(animated)
+
+    /// Show the tab bar after viewing the meme
     self.tabBarController?.tabBar.hidden = false
   }
 }

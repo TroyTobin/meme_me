@@ -10,17 +10,12 @@ import UIKit
 /// This class controls the view for showing saved memes in a collection view.
 /// NOTE: majority of this code and structure has resulted from
 ///       completing the "UIKit Fundamentals" Udacity course
-class MemeCollectionViewController: UIViewController,
-                                    UICollectionViewDataSource,
-                                    UICollectionViewDelegate
-{
+class MemeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
   
   var Memes: [Meme]!
   @IBOutlet var CollectionView: UICollectionView!
   
-  
-  override func viewWillAppear(animated: Bool)
-  {
+  override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
     /// Set this class to be the delegate
@@ -30,8 +25,7 @@ class MemeCollectionViewController: UIViewController,
     /// Get the shared memes array
     let AppDelegateObject = UIApplication.sharedApplication().delegate as! AppDelegate
     Memes = AppDelegateObject.Memes
-    if (Memes.count == 0 && AppDelegateObject.Entry)
-    {
+    if (Memes.count == 0 && AppDelegateObject.Entry) {
       let CreateMemeView = self.storyboard!.instantiateViewControllerWithIdentifier("CreateMemeNavController") as! UINavigationController
       self.navigationController?.presentViewController(CreateMemeView, animated: true, completion: nil)
     }
@@ -44,9 +38,7 @@ class MemeCollectionViewController: UIViewController,
   ///
   /// :param: collectionView The collection view controller
   /// :param: section The index into the collection view
-  func collectionView(collectionView: UICollectionView,
-                      numberOfItemsInSection section: Int) -> Int
-  {
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return self.Memes.count
   }
   
@@ -54,9 +46,7 @@ class MemeCollectionViewController: UIViewController,
   ///
   /// :param: collectionView The collection view controller
   /// :param: indexPath The index of the item in the collection view
-  func collectionView(collectionView: UICollectionView,
-                      cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
-  {
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
     let MemeCell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionViewCell", forIndexPath: indexPath) as! MemeCollectionViewCell
     let Meme = self.Memes[indexPath.row]
@@ -71,12 +61,9 @@ class MemeCollectionViewController: UIViewController,
   ///
   /// :param: collectionView The collection view controller
   /// :param: indexPath The index of the item selected
-  func collectionView(collectionView: UICollectionView,
-                      didSelectItemAtIndexPath indexPath:NSIndexPath)
-  {
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath) {
     let MemeView = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
     MemeView.SelectedMeme = self.Memes[indexPath.row]
     self.navigationController!.pushViewController(MemeView, animated: true)
   }
 }
-

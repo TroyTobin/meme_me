@@ -9,28 +9,9 @@
 import UIKit
 
 /// This class represents a single meme
-class Meme
-{
+struct Meme {
   var TopText: NSString!
   var BottomText: NSString!
   var Image: UIImage!
   var MemedImage: UIImage!
-  
-  /// Initialise the Meme Class.
-  ///
-  /// :param: topText The top text for the Meme
-  /// :param: bottomText The bottom text for the Meme
-  /// :param: image The image for the Meme
-  /// :param: memedImage The combined Meme image, including the top text, 
-  ///                    bottom text and the image.
-  init(topText:NSString,
-       bottomText:NSString,
-       image:UIImage,
-       memedImage:UIImage)
-  {
-    TopText = topText
-    BottomText = bottomText
-    Image = image
-    MemedImage = memedImage
-  }
 }

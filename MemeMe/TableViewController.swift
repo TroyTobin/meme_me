@@ -15,15 +15,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   var Memes: [Meme]!
   @IBOutlet var TableView: UITableView!
   
-  override func viewWillAppear(animated: Bool)
-  {
+  override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
     /// Get the shared memes array
     let AppDelegateObject = UIApplication.sharedApplication().delegate as! AppDelegate
     Memes = AppDelegateObject.Memes
-    if (Memes.count == 0 && AppDelegateObject.Entry)
-    {
+    if (Memes.count == 0 && AppDelegateObject.Entry) {
       let CreateMemeView = self.storyboard!.instantiateViewControllerWithIdentifier("CreateMemeNavController") as! UINavigationController
       self.navigationController?.presentViewController(CreateMemeView, animated: true, completion: nil)
     }
@@ -36,9 +34,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   ///
   /// :param: tableView The table view controller
   /// :param: section The index into the table view
-  func tableView(tableView: UITableView,
-                 numberOfRowsInSection section: Int) -> Int
-  {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.Memes.count
   }
   
@@ -46,9 +42,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   ///
   /// :param: tableView The table view controller
   /// :param: indexPath The index of the item in the table view
-  func tableView(tableView: UITableView,
-                 cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-  {
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let Cell = tableView.dequeueReusableCellWithIdentifier("MemeTableCell") as! UITableViewCell
     let Meme = self.Memes[indexPath.row]
     
@@ -63,9 +57,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   ///
   /// :param: tableView The table view controller
   /// :param: indexPath The index of the item selected
-  func tableView(tableView: UITableView,
-                 didSelectRowAtIndexPath indexPath: NSIndexPath)
-  {
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let MemeView = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
     MemeView.SelectedMeme = self.Memes[indexPath.row]
     self.navigationController!.pushViewController(MemeView, animated: true)

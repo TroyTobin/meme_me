@@ -19,7 +19,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     let object = UIApplication.sharedApplication().delegate
     let appDelegate = object as! AppDelegate
-    memes = appDelegate.memes
+    memes = appDelegate.Memes
     
     CollectionView.reloadData()
   }
@@ -42,7 +42,6 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
   {
     let MemeView = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
-    println(MemeView)
     MemeView.meme = self.memes[indexPath.row]
     self.navigationController!.pushViewController(MemeView, animated: true)
   }

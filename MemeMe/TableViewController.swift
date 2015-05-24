@@ -17,7 +17,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     let object = UIApplication.sharedApplication().delegate
     let appDelegate = object as! AppDelegate
-    memes = appDelegate.memes
+    memes = appDelegate.Memes
     TableView.reloadData()
   }
   
@@ -26,8 +26,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    print("in table view ->")
-    println(indexPath)
     let cell = tableView.dequeueReusableCellWithIdentifier("MemeTableCell") as! UITableViewCell
     let meme = self.memes[indexPath.row]
     
@@ -39,9 +37,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    println("View the meme");
     let MemeView = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
-    println(MemeView)
     MemeView.meme = self.memes[indexPath.row]
     self.navigationController!.pushViewController(MemeView, animated: true)
     

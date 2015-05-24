@@ -28,13 +28,21 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   /// Return the number of saved Meme images to show
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  ///
+  /// :param: tableView The table view controller
+  /// :param: section The index into the table view
+  func tableView(tableView: UITableView,
+                 numberOfRowsInSection section: Int) -> Int
   {
     return self.Memes.count
   }
   
   /// Return the meme for the desired index
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  ///
+  /// :param: tableView The table view controller
+  /// :param: indexPath The index of the item in the table view
+  func tableView(tableView: UITableView,
+                 cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
     let Cell = tableView.dequeueReusableCellWithIdentifier("MemeTableCell") as! UITableViewCell
     let Meme = self.Memes[indexPath.row]
@@ -47,7 +55,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   /// View the selected meme in the MemeViewController
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+  ///
+  /// :param: tableView The table view controller
+  /// :param: indexPath The index of the item selected
+  func tableView(tableView: UITableView,
+                 didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
     let MemeView = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
     MemeView.SelectedMeme = self.Memes[indexPath.row]

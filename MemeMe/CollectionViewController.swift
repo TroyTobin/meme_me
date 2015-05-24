@@ -35,6 +35,9 @@ class MemeCollectionViewController: UIViewController,
   }
   
   /// Return the number of saved Meme images to show
+  ///
+  /// :param: collectionView The collection view controller
+  /// :param: section The index into the collection view
   func collectionView(collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int
   {
@@ -42,6 +45,9 @@ class MemeCollectionViewController: UIViewController,
   }
   
   /// Return the meme for the desired index
+  ///
+  /// :param: collectionView The collection view controller
+  /// :param: indexPath The index of the item in the collection view
   func collectionView(collectionView: UICollectionView,
                       cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
   {
@@ -56,6 +62,9 @@ class MemeCollectionViewController: UIViewController,
   }
   
   /// View the selected meme in the MemeViewController
+  ///
+  /// :param: collectionView The collection view controller
+  /// :param: indexPath The index of the item selected
   func collectionView(collectionView: UICollectionView,
                       didSelectItemAtIndexPath indexPath:NSIndexPath)
   {

@@ -32,7 +32,6 @@ class MemeCollectionViewController: UIViewController,
     Memes = AppDelegateObject.Memes
     if (Memes.count == 0 && AppDelegateObject.Entry)
     {
-      println("here")
       let CreateMemeView = self.storyboard!.instantiateViewControllerWithIdentifier("CreateMemeNavController") as! UINavigationController
       self.navigationController?.presentViewController(CreateMemeView, animated: true, completion: nil)
     }
